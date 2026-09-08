@@ -1,0 +1,7 @@
+CREATE TABLE IF NOT EXISTS companies(company_id INTEGER PRIMARY KEY,cik TEXT UNIQUE,ticker TEXT,company_name TEXT NOT NULL,sector TEXT);
+CREATE TABLE IF NOT EXISTS financial_statements(statement_id INTEGER PRIMARY KEY,company_id INTEGER NOT NULL,fiscal_year INTEGER NOT NULL,revenue REAL,operating_income REAL,depreciation_amortization REAL,net_income REAL,total_debt REAL,cash REAL,equity REAL,interest_expense REAL,current_assets REAL,current_liabilities REAL,receivables REAL,inventory REAL,payables REAL,cogs REAL,cfo REAL,capex REAL,UNIQUE(company_id,fiscal_year));
+CREATE TABLE IF NOT EXISTS financial_ratios(statement_id INTEGER PRIMARY KEY,debt_to_ebitda REAL,net_debt_to_ebitda REAL,interest_coverage REAL,ebitda_margin REAL,current_ratio REAL,quick_ratio REAL,cfo_to_net_income REAL,fcf_to_debt REAL,cash_conversion_cycle REAL);
+CREATE TABLE IF NOT EXISTS credit_scores(company_id INTEGER,fiscal_year INTEGER,composite_score REAL,credit_tier TEXT,PRIMARY KEY(company_id,fiscal_year));
+CREATE TABLE IF NOT EXISTS risk_predictions(company_id INTEGER,fiscal_year INTEGER,model_name TEXT,predicted_probability REAL,actual_distress_flag INTEGER);
+CREATE TABLE IF NOT EXISTS early_warning_signals(company_id INTEGER,fiscal_year INTEGER,ew_risk_score REAL,ew_state TEXT);
+CREATE TABLE IF NOT EXISTS stress_test_results(company_id INTEGER,fiscal_year INTEGER,scenario TEXT,interest_coverage REAL,debt_to_ebitda REAL);
