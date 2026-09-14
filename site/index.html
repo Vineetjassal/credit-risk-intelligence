@@ -1,24 +1,11 @@
 <!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>CreditWatch | Credit Risk Intelligence</title><link rel="stylesheet" href="style.css">
-</head>
-<body>
-<header><div><span class="eyebrow">CREDITWATCH</span><h1>Corporate Credit Risk Intelligence</h1><p>Portfolio monitoring, PD analytics, early warnings and stress testing.</p></div><span class="badge">Demo / synthetic data</span></header>
-<main>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>CreditWatch | Credit Risk Intelligence</title><link rel="stylesheet" href="style.css"></head>
+<body><header><div><span class="eyebrow">CREDITWATCH</span><h1>Corporate Credit Risk Intelligence</h1><p>Portfolio monitoring, PD analytics, early warnings, covenants and stress testing.</p></div><span class="badge">Demo / synthetic data</span></header><main>
 <section class="toolbar"><label>Company <select id="company"></select></label><label>Scenario <select id="scenario"><option value="base">Base</option><option value="downside">Downside</option><option value="severe">Severe Downside</option></select></label><span id="asof"></span></section>
 <section class="cards" id="cards"></section>
-<section class="grid">
-<article><h2>Credit score & risk tier</h2><div class="score"><div id="score" class="score-num"></div><div><strong id="tier"></strong><p id="tierText"></p></div></div><div id="pillars"></div></article>
-<article><h2>Key ratios</h2><div id="ratios" class="table"></div></article>
-</section>
-<section class="grid">
-<article><h2>Early warning system</h2><div id="ews"></div></article>
-<article><h2>Stress test impact</h2><div id="stress"></div></article>
-</section>
+<section class="grid"><article><h2>Credit score & risk tier</h2><div class="score"><div id="score" class="score-num"></div><div><strong id="tier"></strong><p id="tierText"></p></div></div><div id="pillars"></div></article><article><h2>Key ratios</h2><div id="ratios" class="table"></div></article></section>
+<section class="grid"><article><h2>Early warning system</h2><div id="ews"></div></article><article><h2>Stress test impact</h2><div id="stress"></div></article></section>
+<section class="grid"><article><h2>Covenant monitor</h2><div id="covenants"></div></article><article><h2>Data quality & model monitoring</h2><div id="quality"></div></article></section>
 <section><h2>Risk migration</h2><div id="migration" class="migration"></div></section>
-</main>
-<footer>CreditWatch is an analytical prototype. Distress probability is a constructed proxy, not legal default or investment advice.</footer>
-<script src="app.js"></script>
-</body></html>
+<section class="grid"><article><h2>Portfolio concentration</h2><div id="portfolio"></div></article><article><h2>Recommended actions</h2><div id="actions"></div></article></section>
+</main><footer>CreditWatch is an analytical prototype. Distress probability is a constructed proxy, not legal default or investment advice.</footer><script src="app.js"></script></body></html>
