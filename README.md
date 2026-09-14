@@ -1,6 +1,6 @@
 # CreditWatch — Corporate Credit Risk Intelligence
 
-A portfolio-grade corporate credit-risk analytics prototype: SEC financial data → cleaning → credit ratios → transparent scorecard → distress probability → early warning → stress testing → SQL analytics → Excel committee model → Streamlit dashboard.
+A portfolio-grade corporate credit-risk intelligence prototype: SEC financial data → normalization → credit ratios → transparent scorecard → distress probability → early warning → stress testing → portfolio analytics → SQL → credit committee memo → Streamlit dashboard → GitHub Pages static dashboard.
 
 > Distress is a constructed financial-distress proxy, not legal default.
 
@@ -11,13 +11,25 @@ A portfolio-grade corporate credit-risk analytics prototype: SEC financial data 
 - 4-pillar percentile scorecard and 5 internal risk tiers
 - Constructed forward distress proxy
 - Logistic Regression PD model utilities with ROC-AUC, KS, precision/recall
+- PD calibration diagnostics and Brier score
 - Early-warning signals and risk states
 - Base / Downside / Severe Downside stress testing
+- Portfolio concentration and exposure-weighted PD analytics
 - SQLite schema and analytical SQL
+- Credit committee memo generator
 - Streamlit dashboard with clearly labelled demo mode
+- Responsive static CreditWatch dashboard for GitHub Pages
+- GitHub Actions CI and Pages deployment workflow
 - Automated tests
 
-## Run
+## Live static dashboard
+The Pages deployment is configured through `.github/workflows/deploy-pages.yml` and publishes `site/` on pushes to `main`. If Pages is enabled for the repository, the expected URL is:
+
+`https://vineetjassal.github.io/credit-risk-intelligence/`
+
+GitHub Pages cannot execute Streamlit/Python. The static site therefore uses synthetic demo data and is designed as a portfolio-facing monitoring UI; production data should be precomputed and validated by the Python pipeline.
+
+## Run locally
 ```bash
 python -m venv .venv
 source .venv/bin/activate
